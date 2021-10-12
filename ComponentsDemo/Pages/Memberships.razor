@@ -1,0 +1,37 @@
+﻿@page "/memberships"
+
+<h3>Memberships Conversion Run</h3>
+
+<SlotComponent></SlotComponent>
+<hr />
+<div class="row">
+    <div class="col-2">
+        <button class="btn btn-outline-primary">Create @queryCount Memberships</button>
+    </div>
+    <div class="col-5">
+        <p class="h5 font-weight-bold">Runtime Status: <span class="font-weight-normal">@DurableResponse.runtimeStatus</span></p>
+        <h4>Input</h4>
+        <p class="font-weight-bold">OrchId: <span class="font-weight-normal">@DurableResponse.instanceId</span></p>
+        <p>Start Time: @DurableResponse.createdTime</p>
+        <p>End Time: @DurableResponse.lastUpdatedTime</p>
+        <p>Elapsed Time: 10m</p>
+    </div>
+    <div class="col-5">
+        <h4>Output</h4>
+        <p>Expected Count: @DurableResponse.output.Status.OrchestrationStatus.ExpectedCount</p>
+        <p>Processed Count: @DurableResponse.output.Status.OrchestrationStatus.ProcessedCount</p>
+        <p>Success Count: @DurableResponse.output.Status.OrchestrationStatus.SuccessCount</p>
+        <p>Failure Count: @DurableResponse.output.Status.OrchestrationStatus.FailureCount</p>
+        <p>Success Rate: 100%</p>
+    </div>
+</div>
+
+<hr />
+
+<ConversionResultPage></ConversionResultPage>
+
+<hr />
+
+<h4>History</h4>
+
+

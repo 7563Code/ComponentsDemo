@@ -1,0 +1,10 @@
+﻿@page "/conversionresult"
+
+<h3>Conversion Result</h3>
+
+<div>
+    @foreach (var seqlog in SeqLogResults)
+    {
+        <SeqLogComponent SeqLog="seqlog"></SeqLogComponent>
+    }
+</div>

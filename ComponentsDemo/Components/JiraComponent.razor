@@ -1,0 +1,5 @@
+﻿@*<input value="@jiraNumber"
+       @onchange="@((ChangeEventArgs __e) => 
+                    jiraNumber = __e.Value.ToString())" />*@
+<input value="@jiraNumber"
+       @onchange="@((ChangeEventArgs args) => OnJiraNumberChange(args))" />

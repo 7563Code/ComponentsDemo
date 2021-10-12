@@ -1,0 +1,29 @@
+﻿<div>
+    <div class="row">
+        <div class="col-2">
+            <select class="custom-select" @onchange="@((ChangeEventArgs args) => OnSlotChanged(args))" title="Choose Slot ">
+                <option value="Select" selected disabled="disabled">(Choose Slot)</option>
+                @foreach (var slot in slots)
+                {
+                    <option value="@slot"> @slot</option>
+
+                }
+            </select>
+        </div>
+        <div class="col-2 bg-light">
+            <button class="btn @healthCheckIndicator" @onclick="GetHealthCheckAsync">Health Check</button>
+            @if (isCheckingHealth)
+            {
+                <span> Loading <span class="oi oi-loop-circular"></span></span>
+            }
+
+        </div>
+        <div class="col-2">
+            Etl State
+        </div>
+        <div class="col-2">
+            Run Stats
+        </div>
+    </div>
+</div>
+
